@@ -6,8 +6,8 @@ const Hero = () => {
       className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center text-white bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${hero})` }}
     >
-      {/* Overlay - تأكدت من استخدام الألوان المخصصة من الـ CSS الجديد */}
-      <div className="absolute inset-0 bg-gradient-to-b from-islamic-blue/90 via-islamic-blue/70 to-islamic-blue/80"></div>
+  
+      <div className="absolute inset-0 bg-gradient-to-b from-islamic-blue-hero/90 via-islamic-blue-hero/20 to-islamic-blue-hero/80"></div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto text-center px-6">

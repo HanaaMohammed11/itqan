@@ -36,13 +36,13 @@ const Navbar = () => {
           ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 md:translate-x-0 md:opacity-100'}
         `}>
           <li>
-            <Link to="/" onClick={() => setIsOpen(false)} className="relative py-1 hover:text-islamic-gold transition-colors group text-xl md:text-base">
+            <Link to="/" onClick={() => setIsOpen(false)} className="relative py-1 font-bold hover:text-islamic-gold transition-colors group text-xl md:text-base">
               الرئيسية
               <span className="absolute bottom-0 right-0 w-0 h-0.5 bg-islamic-gold transition-all group-hover:w-full"></span>
             </Link>
           </li>
           <li>
-            <Link to="/about" onClick={() => setIsOpen(false)} className="relative py-1 hover:text-islamic-gold transition-colors group text-xl md:text-base">
+            <Link to="/about" onClick={() => setIsOpen(false)} className="relative py-1 hover:text-islamic-gold font-bold transition-colors group text-xl md:text-base">
               من نحن
               <span className="absolute bottom-0 right-0 w-0 h-0.5 bg-islamic-gold transition-all group-hover:w-full"></span>
             </Link>

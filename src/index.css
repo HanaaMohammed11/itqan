@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-islamic-blue: #0C1922;
+  --color-islamic-blue: #2B4753;
+    --color-islamic-blue-hero: #0C1922;
   --color-islamic-gold: #d4af37;
   --color-islamic-green: #2e8b57;
 
