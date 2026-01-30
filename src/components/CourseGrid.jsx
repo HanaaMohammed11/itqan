@@ -26,26 +26,35 @@ const CourseGrid = () => {
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12 text-islamic-blue">دوراتنا التعليمية</h2>
         
-        <div className="flex justify-center mb-8">
-          <button 
-            onClick={() => filterCourses('all')} 
-            className={`px-4 py-2 mx-2 rounded ${activeCategory === 'all' ? 'bg-islamic-gold text-white' : 'bg-gray-200 text-gray-700'}`}
-          >
-            الكل
-          </button>
-          <button 
-            onClick={() => filterCourses('quran')} 
-            className={`px-4 py-2 mx-2 rounded ${activeCategory === 'quran' ? 'bg-islamic-gold text-white' : 'bg-gray-200 text-gray-700'}`}
-          >
-            دورات القرآن
-          </button>
-          <button 
-            onClick={() => filterCourses('sharia')} 
-            className={`px-4 py-2 mx-2 rounded ${activeCategory === 'sharia' ? 'bg-islamic-gold text-white' : 'bg-gray-200 text-gray-700'}`}
-          >
-            دورات علوم شرعية
-          </button>
-        </div>
+     <div className="flex flex-wrap justify-center gap-4 mb-12" dir="rtl">
+  <button 
+    onClick={() => filterCourses('all')} 
+    className={`px-8 py-2 rounded-full font-bold transition-all duration-300 border-2
+      ${activeCategory === 'all' 
+        ? 'bg-islamic-gold border-islamic-gold text-white shadow-lg' 
+        : 'bg-white border-gray-200 text-gray-500 hover:border-islamic-gold/50'}`}
+  >
+    الكل
+  </button>
+  <button 
+    onClick={() => filterCourses('quran')} 
+    className={`px-8 py-2 rounded-full font-bold transition-all duration-300 border-2
+      ${activeCategory === 'quran' 
+        ? 'bg-islamic-gold border-islamic-gold text-white shadow-lg' 
+        : 'bg-white border-gray-200 text-gray-500 hover:border-islamic-gold/50'}`}
+  >
+    دورات القرآن
+  </button>
+  <button 
+    onClick={() => filterCourses('sharia')} 
+    className={`px-8 py-2 rounded-full font-bold transition-all duration-300 border-2
+      ${activeCategory === 'sharia' 
+        ? 'bg-islamic-gold border-islamic-gold text-white shadow-lg' 
+        : 'bg-white border-gray-200 text-gray-500 hover:border-islamic-gold/50'}`}
+  >
+    دورات علوم شرعية
+  </button>
+</div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredCourses.map(course => (
