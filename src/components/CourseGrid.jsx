@@ -22,45 +22,51 @@ const CourseGrid = () => {
   };
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-12 md:py-20 px-4 bg-gray-50/50 font-cairo" dir="rtl">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12 text-islamic-blue">دوراتنا التعليمية</h2>
         
-     <div className="flex flex-wrap justify-center gap-4 mb-12" dir="rtl">
-  <button 
-    onClick={() => filterCourses('all')} 
-    className={`px-8 py-2 rounded-full font-bold transition-all duration-300 border-2
-      ${activeCategory === 'all' 
-        ? 'bg-islamic-gold border-islamic-gold text-white shadow-lg' 
-        : 'bg-white border-gray-200 text-gray-500 hover:border-islamic-gold/50'}`}
-  >
-    الكل
-  </button>
-  <button 
-    onClick={() => filterCourses('quran')} 
-    className={`px-8 py-2 rounded-full font-bold transition-all duration-300 border-2
-      ${activeCategory === 'quran' 
-        ? 'bg-islamic-gold border-islamic-gold text-white shadow-lg' 
-        : 'bg-white border-gray-200 text-gray-500 hover:border-islamic-gold/50'}`}
-  >
-    دورات القرآن
-  </button>
-  <button 
-    onClick={() => filterCourses('sharia')} 
-    className={`px-8 py-2 rounded-full font-bold transition-all duration-300 border-2
-      ${activeCategory === 'sharia' 
-        ? 'bg-islamic-gold border-islamic-gold text-white shadow-lg' 
-        : 'bg-white border-gray-200 text-gray-500 hover:border-islamic-gold/50'}`}
-  >
-    دورات علوم شرعية
-  </button>
-</div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredCourses.map(course => (
-            <CourseCard key={course.id} course={course} />
+        {/* العنوان متجاوب */}
+        <h2 className="text-2xl md:text-4xl font-black text-center mb-10 text-islamic-blue">
+          دوراتنا التعليمية
+        </h2>
+        
+        {/* فلاتر متجاوبة: تحسين التوزيع في الموبايل */}
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12 max-w-2xl mx-auto">
+          {[
+            { id: 'all', label: 'الكل' },
+            { id: 'quran', label: 'دورات القرآن' },
+            { id: 'sharia', label: 'علوم شرعية' }
+          ].map((cat) => (
+            <button 
+              key={cat.id}
+              onClick={() => filterCourses(cat.id)} 
+              className={`
+                flex-1 md:flex-none min-w-[100px] text-center
+                px-4 md:px-8 py-2 md:py-2.5 rounded-full text-sm md:text-base font-bold transition-all duration-300 border-2
+                ${activeCategory === cat.id 
+                  ? 'bg-islamic-gold border-islamic-gold text-white shadow-md scale-105' 
+                  : 'bg-white border-gray-200 text-gray-500 hover:border-islamic-gold/30 hover:text-islamic-blue'}
+              `}
+            >
+              {cat.label}
+            </button>
           ))}
         </div>
+
+        {/* Grid متجاوب بذكاء */}
+        {/* تم استخدام grid-cols-1 للموبايل، 2 للتابلت، 3 للشاشات الكبيرة */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+          {filteredCourses.length > 0 ? (
+            filteredCourses.map(course => (
+              <CourseCard key={course.id} course={course} />
+            ))
+          ) : (
+            <div className="col-span-full text-center py-20 text-gray-400">
+              لا توجد دورات متاحة في هذا القسم حالياً.
+            </div>
+          )}
+        </div>
+        
       </div>
     </section>
   );
