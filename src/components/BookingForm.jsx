@@ -73,7 +73,7 @@ const BookingForm = ({ courseTitle, onClose }) => {
             </button>
             <button
               type="submit"
-              className="bg-islamic-gold font-bold text-islamic-blue- px-6 py-2 rounded hover:bg-islamic-blue transition-colors"
+              className="bg-islamic-gold font-bold text-white px-6 py-2 rounded hover:bg-islamic-blue transition-colors"
             >
               إرسال عبر واتساب
             </button>
