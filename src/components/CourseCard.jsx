@@ -24,7 +24,7 @@ const CourseCard = ({ course }) => {
         {/* الزر */}
         <Link 
           to={`/courses/${course.id}`} 
-          className="bg-islamic-gold text-islamic-blue font-bold py-3 w-full text-center rounded-xl hover:bg-islamic-blue hover:text-white transition-all duration-300"
+          className="bg-islamic-gold text-white font-bold py-3 w-full text-center rounded-xl hover:bg-islamic-blue hover:text-white transition-all duration-300"
         >
           عرض تفاصيل الدورة
         </Link>
