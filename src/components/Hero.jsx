@@ -18,12 +18,12 @@ const Hero = () => {
         <p className="text-lg md:text-2xl mb-10 text-gray-200 max-w-2xl mx-auto leading-relaxed">
           دورات متخصصة في القرآن الكريم وعلوم الشريعة الإسلامية تحت إشراف نخبة من المتخصصين.
         </p>
-
+{/* 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
              <button className="bg-islamic-gold text-islamic-blue px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform">
                 ابدأ رحلتك الآن
              </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
