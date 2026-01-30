@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-
   --color-islamic-blue: #203947;
   --color-islamic-gold: #d4af37;
   --color-islamic-green: #2e8b57;
 
 
-  --font-arabic: "Amiri", serif;
+  --font-cairo: "Cairo", sans-serif;
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
 
 @layer base {
   body {
-    @apply font-arabic bg-white text-gray-900;
+
+    font-family: var(--font-cairo);
+    @apply bg-white text-gray-900;
   }
 }
